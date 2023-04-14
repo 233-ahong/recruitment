@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/demo1/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recruitment-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recruitment-admin/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recruitment-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recruitment-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recruitment-auth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recruitment-auth/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recruitment-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recruitment-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recruitment-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recruitment-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recruitment-modules/recruitment-file/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recruitment-modules/recruitment-file/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recruitment-modules/recruitment-resume/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recruitment-modules/recruitment-resume/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recruitment-modules/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recruitment-modules/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,17 @@
+# Tomcat
+server:
+  port: 9100
+
+# Spring
+spring:
+  application:
+    name: recruitment-auth
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://ahong.ltd:8848
+      config:
+        server-addr: http://ahong.ltd:8848
+        file-extension: yml
+  main:
+    allow-bean-definition-overriding: true

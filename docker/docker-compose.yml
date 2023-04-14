@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  recruitment-nacos:
+    container_name: recruitment-nacos
+    image: nacos/nacos-server
+    build:
+      context: ./nacos
+    environment:
+      - MODE=standalone
+      - SPRING_DATASOURCE_PLATFORM=mysql
+      - NACOS_AUTH_TOKEN=8b92c609089f74db3c5ee04bd7d4d89e8b92c609089f74db3c5ee04bd7d4d89e
+      - NACOS_AUTH_IDENTITY_KEY=ahong-recruitment
+      - NACOS_AUTH_IDENTITY_VALUE=eyJhbGciOiJIUzI1NiJ9.eyJhaG9uZy1yZWNydWl0bWVudCI6ImFob25nIn0.qzmzOvLx7YqaRGIywxOgsIR9KYUS2xsgpKlF3_VwLm4
+    volumes:
+      - ./nacos/logs/:/home/nacos/logs
+      - ./nacos/conf/application.properties:/home/nacos/conf/application.properties
+    ports:
+      - "8848:8848"
+      - "9848:9848"
+      - "9849:9849"
