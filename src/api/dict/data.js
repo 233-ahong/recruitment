@@ -5,7 +5,7 @@ export function listData(query) {
   return request({
     url: '/system/dict/data/list',
     method: 'get',
-    params: query
+    params: query,
   })
 }
 
@@ -13,15 +13,15 @@ export function listData(query) {
 export function getData(dictCode) {
   return request({
     url: '/system/dict/data/' + dictCode,
-    method: 'get'
+    method: 'get',
   })
 }
 
 // 根据字典类型查询字典数据信息
 export function getDicts(dictType) {
   return request({
-    url: '/system/sys/dictDate/type/' + dictType,
-    method: 'get'
+    url: '/system/sys/dictData/type/' + dictType,
+    method: 'get',
   })
 }
 
@@ -30,7 +30,7 @@ export function addData(data) {
   return request({
     url: '/system/sys/dictData',
     method: 'post',
-    data: data
+    data: data,
   })
 }
 
@@ -39,7 +39,7 @@ export function updateData(data) {
   return request({
     url: '/system/sys/dictData',
     method: 'put',
-    data: data
+    data: data,
   })
 }
 
@@ -47,6 +47,6 @@ export function updateData(data) {
 export function delData(dictCode) {
   return request({
     url: '/system/sys/dictData/' + dictCode,
-    method: 'delete'
+    method: 'delete',
   })
 }
