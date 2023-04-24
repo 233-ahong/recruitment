@@ -16,6 +16,8 @@ public class UserConstants {
      */
     public static final String NORMAL = "0";
 
+    public static final String MENU_LIST = "menu_list:";
+
     /**
      * 异常状态
      */

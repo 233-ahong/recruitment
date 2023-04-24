@@ -1,6 +1,6 @@
 package com.ah.common.utils;
 
-import com.ah.api.domain.DictData;
+import com.ah.api.domain.SysDictData;
 import com.ah.common.constant.Constants;
 import com.ah.common.redis.service.RedisService;
 import com.alibaba.fastjson2.JSONArray;
@@ -15,11 +15,11 @@ public class DictUtils {
     /**
      * 设置字典缓存
      *
-     * @param key       参数键
-     * @param dictDatas 字典数据列表
+     * @param key         参数键
+     * @param sysDictData 字典数据列表
      */
-    public static void setDictCache(String key, List<DictData> dictDatas) {
-        SpringUtils.getBean(RedisService.class).setCacheObject(getCacheKey(key), dictDatas);
+    public static void setDictCache(String key, List<SysDictData> sysDictData) {
+        SpringUtils.getBean(RedisService.class).setCacheObject(getCacheKey(key), sysDictData);
     }
 
     /**
@@ -28,10 +28,10 @@ public class DictUtils {
      * @param key 参数键
      * @return dictDatas 字典数据列表
      */
-    public static List<DictData> getDictCache(String key) {
+    public static List<SysDictData> getDictCache(String key) {
         JSONArray arrayCache = SpringUtils.getBean(RedisService.class).getCacheObject(getCacheKey(key));
         if (StringUtils.isNotNull(arrayCache)) {
-            return arrayCache.toList(DictData.class);
+            return arrayCache.toList(SysDictData.class);
         }
         return null;
     }

@@ -1,5 +1,7 @@
 package com.ah.common.config;
 
+import com.ah.common.handler.DateHandler;
+import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
 import org.springframework.context.annotation.Bean;
 
@@ -17,5 +19,10 @@ public class ApplicationConfig {
     @Bean
     public Jackson2ObjectMapperBuilderCustomizer jacksonObjectMapperCustomization() {
         return jacksonObjectMapperBuilder -> jacksonObjectMapperBuilder.timeZone(TimeZone.getDefault());
+    }
+
+    @Bean
+    public MetaObjectHandler metaObjectHandler() {
+        return new DateHandler();
     }
 }

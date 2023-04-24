@@ -1,5 +1,7 @@
 package com.ah.api.domain;
 
+import com.baomidou.mybatisplus.annotation.*;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.apache.maven.surefire.shared.lang3.builder.ToStringBuilder;
 import org.apache.maven.surefire.shared.lang3.builder.ToStringStyle;
@@ -13,7 +15,7 @@ import java.util.Date;
  * @date 2023/4/4 13:14
  * @description
  */
-public class SysUser implements Serializable {
+public class SysUser extends Model<SysUser> implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
@@ -21,6 +23,7 @@ public class SysUser implements Serializable {
     /**
      * 用户ID
      */
+    @TableId(type = IdType.AUTO)
     private Long userId;
 
 
@@ -38,11 +41,6 @@ public class SysUser implements Serializable {
      * 用户类型（00系统用户）
      */
     private String userType;
-
-    /**
-     * 用户邮箱
-     */
-    private String email;
 
     /**
      * 手机号码
@@ -72,11 +70,13 @@ public class SysUser implements Serializable {
     /**
      * 删除标志（0代表存在 2代表删除）
      */
+    @TableLogic(value = "0", delval = "2")
     private String delFlag;
 
     /**
      * 最后登录IP
      */
+    @TableField(exist = false)
     private String loginIp;
 
     /**
@@ -91,6 +91,7 @@ public class SysUser implements Serializable {
      * 创建时间
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @TableField(fill = FieldFill.INSERT)
     private Date createTime;
 
     /**
@@ -102,6 +103,7 @@ public class SysUser implements Serializable {
      * 更新时间
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @TableField(fill = FieldFill.DEFAULT)
     private Date updateTime;
 
     /**
@@ -181,14 +183,6 @@ public class SysUser implements Serializable {
         this.userType = userType;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -260,8 +254,7 @@ public class SysUser implements Serializable {
                 .append("userName", getUserName())
                 .append("nickName", getNickName())
                 .append("userType", getUserType())
-                .append("email", getEmail())
-                .append("phonenumber", getPhoneNumber())
+                .append("phoneNumber", getPhoneNumber())
                 .append("sex", getSex())
                 .append("avatar", getAvatar())
                 .append("password", getPassword())
