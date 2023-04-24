@@ -1,1 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="37.07" height="36" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 198"><path fill="#41B883" d="M204.8 0H256L128 220.8L0 0h97.92L128 51.2L157.44 0h47.36Z"></path><path fill="#41B883" d="m0 0l128 220.8L256 0h-51.2L128 132.48L50.56 0H0Z"></path><path fill="#35495E" d="M50.56 0L128 133.12L204.8 0h-47.36L128 51.2L97.92 0H50.56Z"></path></svg>
+<svg width="1276" height="626" xmlns="http://www.w3.org/2000/svg">
+    <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+    <g>
+        <title>background</title>
+        <rect fill="#fff" id="canvas_background" height="628" width="1278" y="-1" x="-1"/>
+        <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+            <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+        </g>
+    </g>
+    <g>
+        <title>Layer 1</title>
+        <rect stroke="#000" id="svg_1" height="100" width="100" y="244.050002" x="557.499994" stroke-width="1.5" fill="#0fffff"/>
+        <text font-style="normal" font-weight="bold" xml:space="preserve" text-anchor="start" font-family="'Palatino Linotype', 'Book Antiqua', Palatino, serif" font-size="69" id="svg_2" y="319.049994" x="571" stroke-width="0" stroke="#000" fill="#000000">招</text>
+    </g>
+</svg>
