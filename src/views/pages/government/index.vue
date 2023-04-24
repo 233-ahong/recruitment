@@ -1,8 +1,12 @@
 <template>
   <div>
-    <div class='sidebar-1'>
+    <div class="sidebar-1">
       <ul>
-        <li v-for="(heading, index) in headings" :key="index" :class="{ active: isActive(heading) }">
+        <li
+          v-for="(heading, index) in headings"
+          :key="index"
+          :class="{ active: isActive(heading) }"
+        >
           <a :href="'#' + heading.id">{{ heading.text }}</a>
         </li>
       </ul>
@@ -10,11 +14,11 @@
     <div class="content-1">
       <h1>标题</h1>
       <h2 id="section-1">副标题 1</h2>
-      <div class='div-1'>123</div>
+      <div class="div-1">123</div>
       <h2 id="section-2">副标题 2</h2>
-      <div class='div-1'>123</div>
+      <div class="div-1">123</div>
       <h2 id="section-3">副标题 3</h2>
-      <div class='div-1' style='height: 1000px'>123</div>
+      <div class="div-1" style="height: 1000px">123</div>
     </div>
   </div>
 </template>
@@ -29,32 +33,32 @@ export default {
         { id: 'section-3', text: '副标题 3' },
       ],
       activeHeadingIndex: 0,
-    };
+    }
   },
   methods: {
     isActive(heading) {
-      return heading === this.headings[this.activeHeadingIndex];
+      return heading === this.headings[this.activeHeadingIndex]
     },
     handleScroll() {
-      const scrollHeight = window.scrollY;
+      const scrollHeight = window.scrollY
       for (let i = this.headings.length - 1; i >= 0; i--) {
-        const heading = this.headings[i];
-        const headingEl = document.getElementById(heading.id);
-        const distanceFromTop = headingEl.offsetTop - 100; // 100 为阈值
+        const heading = this.headings[i]
+        const headingEl = document.getElementById(heading.id)
+        const distanceFromTop = headingEl.offsetTop - 100 // 100 为阈值
         if (scrollHeight > distanceFromTop) {
-          this.activeHeadingIndex = i;
-          break;
+          this.activeHeadingIndex = i
+          break
         }
       }
     },
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll)
   },
   beforeUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll)
   },
-};
+}
 </script>
 
 <style>

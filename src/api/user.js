@@ -13,8 +13,8 @@ export function logout() {
     url: '/auth/logOut',
     method: 'delete',
     headers: {
-      isToken: false
-    }
+      isToken: false,
+    },
   })
 }
 
@@ -24,8 +24,8 @@ export function code(data) {
     method: 'post',
     data: data,
     headers: {
-      isToken: false
-    }
+      isToken: false,
+    },
   })
 }
 
@@ -33,6 +33,20 @@ export function loginByPhone(data) {
   return request({
     url: '/auth/loginByPhone',
     method: 'post',
-    data: data
+    data: data,
+  })
+}
+
+export function getUserResumeInfo() {
+  return request({
+    url: '/system/resumes/getResumeInfo',
+    method: 'get',
+  })
+}
+
+export function getUploadImageInfo() {
+  return request({
+    url: '/file/image/',
+    method: 'get',
   })
 }

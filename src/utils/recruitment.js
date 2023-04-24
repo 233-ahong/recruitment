@@ -67,10 +67,10 @@ export function tansParams(params) {
 
 export async function blobValidate(data) {
   try {
-    const text = await data.text();
-    JSON.parse(text);
-    return false;
+    const text = await data.text()
+    JSON.parse(text)
+    return false
   } catch (error) {
-    return true;
+    return true
   }
 }

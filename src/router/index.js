@@ -13,18 +13,21 @@ export const routerList = [
     children: [
       {
         path: '/school',
-        component: () => import('@/views/pages/school')
-      }, {
+        component: () => import('@/views/pages/school'),
+      },
+      {
         path: '/strongest',
-        component: () => import('@/views/pages/strongest')
-      }, {
+        component: () => import('@/views/pages/strongest'),
+      },
+      {
         path: '/government',
-        component: () => import('@/views/pages/government')
-      }, {
+        component: () => import('@/views/pages/government'),
+      },
+      {
         path: '/resume',
-        component: () => import('@/views/pages/resume')
+        component: () => import('@/views/pages/resume'),
       }
-    ]
+    ],
   },
 ]
 
