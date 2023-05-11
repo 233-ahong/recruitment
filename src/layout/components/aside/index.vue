@@ -16,7 +16,7 @@
             <text font-style="normal" font-weight="bold" xml:space="preserve" text-anchor="start" font-family="'Palatino Linotype', 'Book Antiqua', Palatino, serif" font-size="20" id="svg_2" y="22" x="5" stroke-width="0" stroke="#000" fill="#000000">招</text>
           </g>
         </svg>
-        <h1 class='side-text'>后台管理</h1>
+        <h1 class='side-text'>管理员后台</h1>
       </div>
       <div v-else class='side-icon'>
         <svg class='side-svg' width="30" height="30" xmlns="http://www.w3.org/2000/svg">

@@ -46,15 +46,15 @@ export function delType(dictId) {
 // 刷新字典缓存
 export function refreshCache() {
   return request({
-    url: '/system/sys/dictType/refreshCache',
+    url: '/system/sys/dictData/refreshCache',
     method: 'delete',
   })
 }
 
 // 获取字典选择框列表
-export function optionselect() {
+export function optionSelect() {
   return request({
-    url: '/system/sys/dictType/optionselect',
+    url: '/system/sys/dictType/optionSelect',
     method: 'get',
   })
 }

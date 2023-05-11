@@ -15,3 +15,10 @@ export function getRouters() {
     method: 'get'
   })
 }
+
+export function getUserInfo() {
+  return request({
+    url: '/system/sys/use/getUserInfo',
+    method: 'get'
+  })
+}

@@ -60,7 +60,11 @@
             </template>
          </el-table-column>
          <el-table-column prop="orderNum" label="排序" width="60"></el-table-column>
-         <el-table-column prop="perms" label="权限标识" :show-overflow-tooltip="true"></el-table-column>
+         <el-table-column prop="perms" label="用户类型" :show-overflow-tooltip="true">
+           <template #default='scope'>
+             <dict-tag :options="sys_permission_type" :value="scope.row.perms" />
+           </template>
+         </el-table-column>
          <el-table-column prop="component" label="组件路径" :show-overflow-tooltip="true"></el-table-column>
          <el-table-column prop="status" label="状态" width="80">
             <template #default="scope">
@@ -196,16 +200,14 @@
                   </el-form-item>
                </el-col>
                <el-col :span="12" v-if="form.menuType !== 'M'">
-                  <el-form-item>
-                     <el-input v-model="form.perms" placeholder="请输入权限标识" maxlength="100" />
-                     <template #label>
-                        <span>
-                           <el-tooltip content="控制器中定义的权限字符，如：@PreAuthorize(`@ss.hasPermi('system:user:list')`)" placement="top">
-                              <el-icon><question-filled /></el-icon>
-                           </el-tooltip>
-                           权限字符
-                        </span>
-                     </template>
+                  <el-form-item prop='perms' label='用户类型'>
+                     <el-select v-model='form.perms' placeholder='请选择权限类型'>
+                       <el-option
+                          v-for="item in sys_permission_type"
+                          :key="item.value"
+                          :label="item.label"
+                          :value="item.value"/>
+                     </el-select>
                   </el-form-item>
                </el-col>
                <el-col :span="12" v-if="form.menuType === 'C'">
@@ -295,9 +297,10 @@ import { ClickOutside as vClickOutside, ElMessage, ElMessageBox } from 'element-
 import { getCurrentInstance, nextTick, reactive, ref, toRefs } from 'vue'
 import { QuestionFilled, Search } from '@element-plus/icons'
 import { parseTime } from '@/utils/recruitment.js'
+import DictTag from '@/components/DictTag/index.vue'
 
 const { proxy } = getCurrentInstance();
-const { sys_show_hide, sys_normal_disable } = proxy.useDict("sys_show_hide", "sys_normal_disable");
+const { sys_show_hide, sys_normal_disable,sys_permission_type } = proxy.useDict("sys_show_hide", "sys_normal_disable","sys_permission_type");
 
 const menuList = ref([]);
 const open = ref(false);
@@ -319,7 +322,8 @@ const data = reactive({
   rules: {
     menuName: [{ required: true, message: "菜单名称不能为空", trigger: "blur" }],
     orderNum: [{ required: true, message: "菜单顺序不能为空", trigger: "blur" }],
-    path: [{ required: true, message: "路由地址不能为空", trigger: "blur" }]
+    path: [{ required: true, message: "路由地址不能为空", trigger: "blur" }],
+    perms: [{ required: true, message: "用户类型不能为空", trigger: "blur" }],
   },
 });
 

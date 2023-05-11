@@ -5,10 +5,6 @@ import Layout from '@/layout'
 
 export const routerList = [
   {
-    path: '/login',
-    component: Login,
-  },
-  {
     path: '/',
     component: Layout,
     redirect: '/system/index',
@@ -34,14 +30,44 @@ export const routerList = [
       {
         path: '/system/:dictId(\\d+)',
         component: () => import('@/views/system/dict/data'),
+      },
+      {
+        path: '/system/company',
+        component: () => import('@/views/system/company')
+      },
+      {
+        path: '/system/advert',
+        component: () => import('@/views/system/advert')
+      },
+      {
+        path: '/system/position',
+        component: () => import('@/views/system/position')
+      },
+      {
+        path: '/system/logger',
+        component: () => import('@/views/system/logger')
       }
     ]
   },
+  {
+    path: '/login',
+    component: Login,
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    component: () => import('@/views/error/404'),
+    hidden: true
+  },
+  {
+    path: '/401',
+    component: () => import('@/views/error/401'),
+    hidden: true
+  }
 ]
 
-export const index = createRouter({
+const router = createRouter({
   history: createWebHistory(),
   routes: routerList,
 })
 
-export default index
+export default router

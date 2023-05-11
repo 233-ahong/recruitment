@@ -164,7 +164,7 @@
 
 <script setup>
 import useDictStore from '@/store/modules/dict'
-import { optionselect as getDictOptionselect, getType } from "@/api/system/dict/type";
+import { optionSelect as getDictOptionselect, getType } from "@/api/system/dict/type";
 import { listData, getData, delData, addData, updateData } from "@/api/system/dict/data";
 import { getCurrentInstance, reactive, ref, toRefs } from 'vue'
 import { useRoute } from 'vue-router'
